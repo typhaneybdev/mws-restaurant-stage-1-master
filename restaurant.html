@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
-
+<!--walk through 8/23/18 https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-2-responsiveness/ & 6/9/18 Doug Brown https://www.youtube.com/watch?v=92dtrNU1GQc -->
+<html lang="en">
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Normalize.css for better cross-browser consistency -->
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
@@ -28,18 +31,17 @@
 
   <!-- Beginning main -->
   <main id="maincontent">
-    <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map"></div>
-    </section>
-    <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
       <h1 id="restaurant-name"></h1>
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
+    </section>
+    <section id="restaurant-address-and-hours">
       <p id="restaurant-address"></p>
+      <div class="restaurant-hours-flex">
       <table id="restaurant-hours"></table>
+      </div>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
@@ -47,6 +49,11 @@
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
+    <!-- Beginning map -->
+    <section id="map-container">
+      <div id="map"></div>
+    </section>
+    <!-- End map -->
   </main>
   <!-- End main -->
 
