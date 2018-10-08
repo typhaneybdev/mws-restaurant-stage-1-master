@@ -232,7 +232,7 @@ nav h1 a {
 	text-align: center;
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #be7d05;
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;

@@ -207,9 +207,13 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 }
 //register service worker .. https://developers.google.com/web/fundamentals/primers/service-workers/registration
+//https://www.youtube.com/watch?time_continue=701&v=ksXwaWHCW6k walkthrough with Traversy Media 8/3/18
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js');
+  window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('js/sw.js')
+        .then(reg => console.log('Service Worker: Registered'))
+        .catch(err => console.log(`Service Worker: Error: ${err}`));
   });
 }
 
