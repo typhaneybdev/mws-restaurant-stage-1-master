@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!--walk through 8/23/18 https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-2-responsiveness/ & 6/9/18 Doug Brown https://www.youtube.com/watch?v=92dtrNU1GQc -->
+<!--walk through 8/23/18 https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-2-responsiveness/ & 6/9/18 Doug Brown https://www.youtube.com/watch?v=92dtrNU1GQc
+https://alexandroperez.github.io/mws-walkthrough/?1.21.aria-links 10/7 Alexandro Perez-->
 <html lang='en'>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -14,7 +15,7 @@
 <body>
   <header>
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a aria-label="Home" href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
@@ -26,19 +27,24 @@
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
+        <label for="neighborhoods-select">neighborhoods-select</label>
         <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
+        <label for="cuisines-select">cuisines-select</label>
       </div>
+      <div>
       <ul id="restaurants-list"></ul>
+      </div>
     </section>
-    <section id="map-container">
+    <section id="map-container" aria-label="map-aria-description" role="application">
       <div id="map"></div>
     </section>
   </main>
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/sw.js"></script> <!--Service Worker-->
   <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script> -->
 
 

@@ -168,6 +168,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name + " restaurant promotional image"; // alt text added to images
   li.append(image);
 
   const name = document.createElement('h1');
@@ -205,6 +206,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
+//register service worker .. https://developers.google.com/web/fundamentals/primers/service-workers/registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js');
+  });
+}
+
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
