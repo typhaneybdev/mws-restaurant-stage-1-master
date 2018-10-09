@@ -31,5 +31,20 @@ self.addEventListener('install', function(e) { // listen for service worker inst
     })
   );
 });
-
-self.add
+//https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers fire fetch event everytime resource controlled by service worker is fetched
+self.addEventListener('fetch', function(e) {
+  e.respondWith(
+    caches.match(event.request).then(function(resp) {
+      return resp || fetch(event.request).then(function(response) {
+        let responseClone = response.clone();
+        caches.open('cacheFiles').then(function(cache) {
+          cache.put(event.request, responseClone);
+        });
+        return response;
+      });
+    })
+    .catch(function(err) {
+      console.log(err);
+    })
+  );
+});
